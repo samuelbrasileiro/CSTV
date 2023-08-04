@@ -28,6 +28,18 @@ targets:
       targetName: Core
     dependencies:
       - target: Service
+      
+  ModuleIntegrator:
+    templates:
+      - framework
+      - groupable
+    templateAttributes:
+      groupName: Core
+      targetName: ModuleIntegrator
+    dependencies:
+      - target: Core
+      - target: MatchTracker
+      - package: DependencyInjection
 
   Service:
     templates:
