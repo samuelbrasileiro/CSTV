@@ -14,6 +14,9 @@ targets:
       groupName: App
       targetName: Application
     scheme:
+      testTargets:
+        - name: ServiceTests
+          randomExecutionOrder: true
       gatherCoverageData: true
   Core:
     templates:
@@ -31,9 +34,26 @@ targets:
       - framework
       - groupable
       - swiftgen-generated
+    scheme:
+      gatherCoverageData: true
+      testTargets:
+        - name: ServiceTests
+          randomExecutionOrder: true
     templateAttributes:
       groupName: Service
       targetName: Service
+
+  ServiceTests:
+    templates:
+      - unit-tests
+      - groupable
+    templateAttributes:
+      groupName: Service
+      targetName: ServiceTests
+    dependencies:
+      - target: Service
+      - package: DependencyInjection
+      - target: ModuleIntegrator
 
 targetTemplates:
   groupable:
