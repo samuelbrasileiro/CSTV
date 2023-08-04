@@ -2,7 +2,12 @@ name: FuzeChallenge
 options:
   bundleIdPrefix: com.samuel.FuzeChallenge
   createIntermediateGroups: true
-
+packages:
+  DependencyInjection:
+    path: DependencyInjection
+  Commons:
+    path: Commons
+    
 targets:
   Application:
     type: application
@@ -28,7 +33,7 @@ targets:
       targetName: Core
     dependencies:
       - target: Service
-      
+
   ModuleIntegrator:
     templates:
       - framework
