@@ -21,11 +21,16 @@ targets:
     templateAttributes:
       groupName: App
       targetName: Application
+    dependencies:
+      - target: Core
+      - target: ModuleIntegrator
+      - target: MatchTracker
     scheme:
       testTargets:
         - name: ServiceTests
           randomExecutionOrder: true
       gatherCoverageData: true
+
   Core:
     templates:
       - framework
@@ -36,6 +41,7 @@ targets:
       targetName: Core
     dependencies:
       - target: Service
+      - package: DependencyInjection
 
   ModuleIntegrator:
     templates:
@@ -47,6 +53,7 @@ targets:
     dependencies:
       - target: Core
       - target: MatchTracker
+      - target: Service
       - package: DependencyInjection
 
   Service:
@@ -62,6 +69,8 @@ targets:
     templateAttributes:
       groupName: Service
       targetName: Service
+    dependencies:
+      - package: DependencyInjection
 
   ServiceTests:
     templates:
