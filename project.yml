@@ -7,7 +7,10 @@ packages:
     path: DependencyInjection
   Commons:
     path: Commons
-    
+  SDWebImageSwiftUI:
+    url: https://github.com/SDWebImage/SDWebImageSwiftUI.git
+    from: 2.2.0
+
 targets:
   Application:
     type: application
