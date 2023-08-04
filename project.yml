@@ -75,6 +75,21 @@ targets:
       - package: DependencyInjection
       - target: ModuleIntegrator
 
+  MatchTracker:
+    templates:
+      - framework
+      - groupable
+      - swiftgen-generated
+    templateAttributes:
+      groupName: MatchTracker
+      targetName: MatchTracker
+    dependencies:
+      - target: Core
+      - target: Service
+      - package: DependencyInjection
+      - package: Commons
+      - package: SDWebImageSwiftUI
+
 targetTemplates:
   groupable:
     sources:
