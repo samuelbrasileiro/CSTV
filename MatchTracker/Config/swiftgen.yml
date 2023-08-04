@@ -1,0 +1,14 @@
+#Store
+strings:
+  inputs: ../MatchTracker/Resources/Localizable.strings
+  outputs:
+    - templateName: structured-swift5
+      params:
+        enumName: Localization
+      output: ../MatchTracker/Resources/Generated/Strings.swift
+xcassets:
+  inputs:
+    - ../MatchTracker/Resources/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: ../MatchTracker/Resources/Generated/Assets.swift

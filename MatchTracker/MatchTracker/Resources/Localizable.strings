@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  MatchTracker
+
+  
+*/
+
+// MARK: - Generic
+
+"Generic.Coder.FatalError" = "init(coder:) has not been implemented";
