@@ -14,6 +14,8 @@ public protocol MatchTrackerCoordinatorDelegate: AnyObject { }
 public final class MatchTrackerCoordinator: CoreCoordinator {
     
     public enum Route: RouteProtocol {
+        case matches
+        case matchDetails(match: Match)
 
     }
     
@@ -41,11 +43,14 @@ public final class MatchTrackerCoordinator: CoreCoordinator {
     }
 
     public func startToRoute(_ route: Route? = nil) { 
-        navigate(to: route)
+        navigate(to: route ?? .matches)
     }
     
     @ViewBuilder
     public func getTransition(to route: Route) -> some View {
-        EmptyView()
+        switch route {
+        case .matches: EmptyView()
+        case .matchDetails(let match): EmptyView()
+        }
     }
 }
