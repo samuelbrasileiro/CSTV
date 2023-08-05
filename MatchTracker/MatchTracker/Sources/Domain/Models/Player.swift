@@ -36,15 +36,11 @@ struct CurrentTeam: Codable {
     var acronym: String?
     var id: Int
     var imageURL: String?
-    var location: String?
-    var modifiedAt: Date
-    var name, slug: String
+    var name: String
 
     enum CodingKeys: String, CodingKey {
         case acronym, id
         case imageURL = "image_url"
-        case location
-        case modifiedAt = "modified_at"
-        case name, slug
+        case name
     }
 }

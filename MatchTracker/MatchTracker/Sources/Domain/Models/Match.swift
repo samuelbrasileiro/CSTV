@@ -14,31 +14,19 @@ public struct Match: Codable {
     var endAt: Date?
     public var id: Int?
     var league: League?
-    var leagueID: Int?
-    var matchType: String?
     var name: String?
     var opponents: [OpponentElement]?
     var serie: Serie?
-    var serieID: Int?
     var tournament: Tournament?
-    var tournamentID: Int?
-    var winner: Winner?
-    var winnerID: Int?
 
     enum CodingKeys: String, CodingKey {
         case beginAt = "begin_at"
         case endAt = "end_at"
         case id, league
-        case leagueID = "league_id"
-        case matchType = "match_type"
         case name
         case opponents
         case serie
-        case serieID = "serie_id"
         case tournament
-        case tournamentID = "tournament_id"
-        case winner
-        case winnerID = "winner_id"
     }
     
     public func getTitle() -> String {
@@ -50,12 +38,6 @@ public struct Match: Codable {
 }
 
 extension Match: Identifiable { }
-
-// MARK: - Winner
-struct Winner: Codable {
-    var id: Int?
-    var type: String?
-}
 
 // MARK: - League
 struct League: Codable {
@@ -101,9 +83,6 @@ struct Serie: Codable {
     var id: Int?
     var leagueID: Int?
     var name: String?
-    var winnerID: String?
-    var winnerType: String?
-    var year: Int?
 
     enum CodingKeys: String, CodingKey {
         case beginAt = "begin_at"
@@ -112,9 +91,6 @@ struct Serie: Codable {
         case id
         case leagueID = "league_id"
         case name
-        case winnerID = "winner_id"
-        case winnerType = "winner_type"
-        case year
     }
 }
 
@@ -122,25 +98,13 @@ struct Serie: Codable {
 struct Tournament: Codable {
     var beginAt: Date?
     var endAt: Date?
-    var id, leagueID: Int?
-    var liveSupported: Bool?
-    var modifiedAt: Date?
+    var id: Int?
     var name: String?
-    var prizepool: String?
-    var serieID: Int?
-    var winnerID: String?
-    var winnerType: String?
 
     enum CodingKeys: String, CodingKey {
         case beginAt = "begin_at"
         case endAt = "end_at"
         case id
-        case leagueID = "league_id"
-        case liveSupported = "live_supported"
-        case modifiedAt = "modified_at"
-        case name, prizepool
-        case serieID = "serie_id"
-        case winnerID = "winner_id"
-        case winnerType = "winner_type"
+        case name
     }
 }
