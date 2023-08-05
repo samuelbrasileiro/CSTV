@@ -68,7 +68,7 @@ public final class MatchTrackerCoordinator: CoreCoordinator {
     @ViewBuilder
     public func getTransition(to route: Route) -> some View {
         switch route {
-        case .matches: EmptyView()
+        case .matches: makeMatchesView()
         case .matchDetails(let match): EmptyView()
         }
     }
