@@ -26,7 +26,14 @@ public extension Date {
             return "Amanhã, \(dateFormatter.string(from: self))"
         }
         
-        dateFormatter.dateFormat = "E, HH:mm"
+        if let nextWeek = calendar.date(byAdding: .weekOfYear, value: 1, to: now),
+           let endOfNextWeek = calendar.date(bySettingHour: 23, minute: 59, second: 59, of: nextWeek),
+           self <= endOfNextWeek {
+            dateFormatter.dateFormat = "E, HH:mm"
+            return dateFormatter.string(from: self)
+        }
+        
+        dateFormatter.dateFormat = "dd.MM, HH:mm"
         return dateFormatter.string(from: self)
     }
 }
