@@ -16,7 +16,13 @@ public final class MatchTrackerCoordinator: CoreCoordinator {
     public enum Route: RouteProtocol {
         case matches
         case matchDetails(match: Match)
-
+        
+        public var barStyle: NavigationBarStyle {
+            switch self {
+            case .matches: return .large
+            default: return .normal
+            }
+        }
     }
     
     // MARK: - PUBLIC PROPERTIES
@@ -41,9 +47,22 @@ public final class MatchTrackerCoordinator: CoreCoordinator {
     public func start() {
         startToRoute()
     }
-
+    
+    func setupNavigationUI() {
+        navigationController.navigationBar.tintColor = CoreColor.primary.uiColor
+        navigationController.navigationBar.barTintColor = CoreColor.primaryBackground.uiColor
+        navigationController.navigationBar.titleTextAttributes = [.foregroundColor : CoreColor.primary.uiColor]
+        navigationController.navigationBar.largeTitleTextAttributes = [.foregroundColor : CoreColor.primary.uiColor]
+        
+        let backButtonImage = UIImage(systemName: "arrow.left")
+        navigationController.navigationBar.backIndicatorImage = backButtonImage
+        navigationController.navigationBar.backIndicatorTransitionMaskImage = backButtonImage
+        navigationController.navigationBar.topItem?.backButtonDisplayMode = .minimal
+    }
+    
     public func startToRoute(_ route: Route? = nil) { 
         navigate(to: route ?? .matches)
+        setupNavigationUI()
     }
     
     @ViewBuilder
