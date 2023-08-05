@@ -10,7 +10,7 @@ typealias PlayersResponse = [Player]
 
 // MARK: - Player
 struct Player: Codable, Identifiable {
-    var currentTeam: CurrentTeam?
+    var currentTeam: Team?
     var firstName: String?
     var id: Int?
     var imageURL: String?
@@ -28,19 +28,5 @@ struct Player: Codable, Identifiable {
     
     func getFullName() -> String {
         return (name ?? "") + (lastName ?? "")
-    }
-}
-
-// MARK: - CurrentTeam
-struct CurrentTeam: Codable {
-    var acronym: String?
-    var id: Int
-    var imageURL: String?
-    var name: String
-
-    enum CodingKeys: String, CodingKey {
-        case acronym, id
-        case imageURL = "image_url"
-        case name
     }
 }

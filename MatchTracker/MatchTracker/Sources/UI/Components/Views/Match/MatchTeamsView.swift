@@ -11,11 +11,11 @@ import SwiftUI
 struct MatchTeamsView: View {
     @Binding var match: Match
     
-    private var team1: Opponent? {
+    private var team1: Team? {
         match.opponents?[safe: 0]?.opponent
     }
     
-    private var team2: Opponent? {
+    private var team2: Team? {
         match.opponents?[safe: 1]?.opponent
     }
     

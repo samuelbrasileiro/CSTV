@@ -55,24 +55,8 @@ struct League: Codable {
 
 // MARK: - OpponentElement
 struct OpponentElement: Codable {
-    var opponent: Opponent?
+    var opponent: Team?
     var type: String?
-}
-
-// MARK: - OpponentOpponent
-struct Opponent: Codable {
-    var acronym: String?
-    var id: Int?
-    var imageURL: String?
-    var location: String?
-    var name: String?
-
-    enum CodingKeys: String, CodingKey {
-        case acronym, id
-        case imageURL = "image_url"
-        case location
-        case name
-    }
 }
 
 // MARK: - Serie

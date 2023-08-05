@@ -9,7 +9,7 @@ import SDWebImageSwiftUI
 import SwiftUI
 
 struct TeamView: View {
-    var team: Opponent?
+    var team: Team?
     
     var body: some View {
         VStack(spacing: 0) {
