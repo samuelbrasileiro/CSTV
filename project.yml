@@ -117,7 +117,7 @@ targetTemplates:
         inputFiles:
           - ${groupName}/${targetName}/Resources/Assets.xcassets
           - ${groupName}/${targetName}/Resources/Localizable.strings
-          - ${groupName}/${targetName}/Resources/Fonts
+          - ${groupName}/${targetName}/Resources/Fonts/
         outputFiles:
           - ${groupName}/${targetName}/Resources/Generated/Assets.swift
           - ${groupName}/${targetName}/Resources/Generated/Strings.swift
