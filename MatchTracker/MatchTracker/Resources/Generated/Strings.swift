@@ -21,11 +21,11 @@ internal enum Localization {
       internal enum PlayerView {
         internal enum Name {
           /// Sem Nome
-          internal static let text = Localization.tr("Localizable", "Components.Views.PlayerView.Name.text", fallback: "Sem Nome")
+          internal static let placeholder = Localization.tr("Localizable", "Components.Views.PlayerView.Name.placeholder", fallback: "Sem Nome")
         }
         internal enum Nickname {
           /// Sem Apelido
-          internal static let text = Localization.tr("Localizable", "Components.Views.PlayerView.Nickname.text", fallback: "Sem Apelido")
+          internal static let placeholder = Localization.tr("Localizable", "Components.Views.PlayerView.Nickname.placeholder", fallback: "Sem Apelido")
         }
       }
       internal enum TeamView {

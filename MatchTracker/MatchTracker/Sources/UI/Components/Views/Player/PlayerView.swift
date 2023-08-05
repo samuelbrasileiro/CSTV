@@ -34,12 +34,12 @@ struct PlayerView: View {
     
     private var playerInfo: some View {
         VStack(alignment: isLeftAligned ? .trailing : .leading, spacing: 4) {
-            Text(player.name ?? "Indisponível")
+            Text(player.name ?? Localization.Components.Views.PlayerView.Nickname.placeholder)
                 .font(CoreFont.roboto.bold(size: 14).swiftUIFont)
                 .lineLimit(1)
                 .foregroundColor(CoreColor.primary.color)
             
-            Text(player.firstName ?? "Indisponível")
+            Text(player.firstName ?? Localization.Components.Views.PlayerView.Name.placeholder)
                 .font(CoreFont.roboto.regular(size: 12).swiftUIFont)
                 .foregroundColor(CoreColor.secondary.color)
                 .lineLimit(1)

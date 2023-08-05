@@ -23,8 +23,8 @@
 
 // MARK: - Components.Views.TeamView
 
-"Components.Views.PlayerView.Nickname.text" = "Sem Apelido";
-"Components.Views.PlayerView.Name.text" = "Sem Nome";
+"Components.Views.PlayerView.Nickname.placeholder" = "Sem Apelido";
+"Components.Views.PlayerView.Name.placeholder" = "Sem Nome";
 
 // MARK: Features
 

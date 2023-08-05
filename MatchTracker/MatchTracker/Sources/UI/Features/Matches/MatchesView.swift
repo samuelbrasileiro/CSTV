@@ -54,7 +54,7 @@ struct MatchesView: View {
                 }
             }
             .background(CoreColor.primaryBackground.color)
-            .navigationBarTitle("Partidas")
+            .navigationBarTitle(Localization.Features.Matches.navigationTitle)
             .showError(error, isPresented: $showErrorAlert)
             .refreshable(action: viewModel.retrieveMatches)
             .onAppear {

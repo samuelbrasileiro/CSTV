@@ -24,7 +24,7 @@ struct TeamView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 60, height: 60)
-            Text(team?.name ?? "Sem Nome")
+            Text(team?.name ?? Localization.Components.Views.TeamView.Name.placehoder)
                 .font(CoreFont.roboto.regular(size: 10).swiftUIFont)
                 .foregroundColor(CoreColor.primary.color)
         }

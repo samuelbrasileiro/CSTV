@@ -22,7 +22,7 @@ struct MatchTeamsView: View {
     var body: some View {
         HStack {
             TeamView(team: team1)
-            Text("vs")
+            Text(Localization.Components.Views.MatchTeamsView.Versus.text)
                 .font(CoreFont.roboto.regular(size: 12).swiftUIFont)
                 .foregroundColor(CoreColor.primary.color.opacity(0.5))
                 .padding(.horizontal, 20)
