@@ -20,7 +20,7 @@ struct MatchItemView: View {
                     MatchTeamsView(match: $match)
                     Spacer()
                 }
-                .padding(.top, 48)
+                .padding(.top, 42)
                 .padding(.bottom, 12)
                 .padding(.horizontal, 12)
                 Rectangle()
