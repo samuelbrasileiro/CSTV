@@ -39,7 +39,6 @@ class MatchesViewModel: ObservableObject {
     // MARK: - PUBLIC METHODS
     
     func setup() {
-        print("almoxarisfado")
         changeViewState.send(.loading)
         Task {
             await retrieveMatches()
