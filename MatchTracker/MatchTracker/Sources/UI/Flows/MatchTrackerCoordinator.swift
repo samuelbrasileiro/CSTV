@@ -51,8 +51,14 @@ public final class MatchTrackerCoordinator: CoreCoordinator {
     func setupNavigationUI() {
         navigationController.navigationBar.tintColor = CoreColor.primary.uiColor
         navigationController.navigationBar.barTintColor = CoreColor.primaryBackground.uiColor
-        navigationController.navigationBar.titleTextAttributes = [.foregroundColor : CoreColor.primary.uiColor]
-        navigationController.navigationBar.largeTitleTextAttributes = [.foregroundColor : CoreColor.primary.uiColor]
+        navigationController.navigationBar.titleTextAttributes = [
+            .foregroundColor: CoreColor.primary.uiColor,
+            .font: CoreFont.roboto.medium(size: 18)
+        ]
+        navigationController.navigationBar.largeTitleTextAttributes = [
+            .foregroundColor: CoreColor.primary.uiColor,
+            .font: CoreFont.roboto.medium(size: 32)
+        ]
         
         let backButtonImage = UIImage(systemName: "arrow.left")
         navigationController.navigationBar.backIndicatorImage = backButtonImage
