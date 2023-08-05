@@ -8,3 +8,26 @@
 // MARK: - Generic
 
 "Generic.Coder.FatalError" = "init(coder:) has not been implemented";
+
+// MARK: - Components
+
+// MARK: - Components.Views
+
+// MARK: - Components.Views.MatchTeamsView
+
+"Components.Views.MatchTeamsView.Versus.text" = "vs";
+
+// MARK: - Components.Views.TeamView
+
+"Components.Views.TeamView.Name.placehoder" = "Sem Nome";
+
+// MARK: - Components.Views.TeamView
+
+"Components.Views.PlayerView.Nickname.text" = "Sem Apelido";
+"Components.Views.PlayerView.Name.text" = "Sem Nome";
+
+// MARK: Features
+
+// MARK: Features.BestSellers
+
+"Features.Matches.navigationTitle" = "Partidas";
