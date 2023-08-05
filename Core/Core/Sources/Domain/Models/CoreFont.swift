@@ -20,4 +20,10 @@ public enum CoreFont {
         case .roboto: return FontFamily.Roboto.bold.font(size: size)
         }
     }
+    
+    public func medium(size: CGFloat) -> UIFont {
+        switch self {
+        case .roboto: return FontFamily.Roboto.medium.font(size: size)
+        }
+    }
 }

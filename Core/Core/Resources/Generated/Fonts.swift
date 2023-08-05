@@ -22,8 +22,9 @@ internal typealias Font = FontConvertible.Font
 internal enum FontFamily {
   internal enum Roboto {
     internal static let bold = FontConvertible(name: "Roboto-Bold", family: "Roboto", path: "Roboto-Bold.ttf")
+    internal static let medium = FontConvertible(name: "Roboto-Medium", family: "Roboto", path: "Roboto-Medium.ttf")
     internal static let regular = FontConvertible(name: "Roboto-Regular", family: "Roboto", path: "Roboto-Regular.ttf")
-    internal static let all: [FontConvertible] = [bold, regular]
+    internal static let all: [FontConvertible] = [bold, medium, regular]
   }
   internal static let allCustomFonts: [FontConvertible] = [Roboto.all].flatMap { $0 }
   internal static func registerAllCustomFonts() {
