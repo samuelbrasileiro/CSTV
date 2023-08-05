@@ -21,4 +21,20 @@ class MatchTrackerService: MatchTrackerServiceProtocol {
             })
         }
     }
+    
+    func getUpcomingMatches(page: Int, completion: @escaping (Result<MatchesResponse, Error>) -> Void) {
+        networkService.fetch(MatchesResponse.self, from: MatchTrackerRequest(.upcomingMatches, page: page)){ result in
+            completion(result.flatMapError { serviceError in
+                    .failure(serviceError)
+            })
+        }
+    }
+    
+    func getRunningMatches(completion: @escaping (Result<MatchesResponse, Error>) -> Void) {
+        networkService.fetch(MatchesResponse.self, from: MatchTrackerRequest(.runningMatches)){ result in
+            completion(result.flatMapError { serviceError in
+                    .failure(serviceError)
+            })
+        }
+    }
 }
