@@ -44,7 +44,7 @@ struct MatchItemView: View {
                 .frame(width: 16, height: 16)
             
             Text(match.getTitle())
-                .font(CoreFont.roboto.regular(size: 8))
+                .font(CoreFont.roboto.regular(size: 8).swiftUIFont)
                 .foregroundColor(CoreColor.primary.color)
             Spacer()
         }
@@ -57,7 +57,7 @@ struct MatchItemView: View {
     func tagView() -> some View {
         let beginAt = match.beginAt ?? .distantFuture
         Text(beginAt.formattedDate())
-            .font(CoreFont.roboto.bold(size: 8))
+            .font(CoreFont.roboto.bold(size: 8).swiftUIFont)
             .multilineTextAlignment(.center)
             .foregroundColor(CoreColor.primary.color)
             .padding(8)

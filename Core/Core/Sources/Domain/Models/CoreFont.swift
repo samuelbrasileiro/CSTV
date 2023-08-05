@@ -9,15 +9,15 @@ import SwiftUI
 public enum CoreFont {
     case roboto
     
-    public func regular(size: CGFloat) -> SwiftUI.Font {
+    public func regular(size: CGFloat) -> UIFont {
         switch self {
-        case .roboto: return FontFamily.Roboto.regular.swiftUIFont(size: size)
+        case .roboto: return FontFamily.Roboto.regular.font(size: size)
         }
     }
     
-    public func bold(size: CGFloat) -> SwiftUI.Font {
+    public func bold(size: CGFloat) -> UIFont {
         switch self {
-        case .roboto: return FontFamily.Roboto.bold.swiftUIFont(size: size)
+        case .roboto: return FontFamily.Roboto.bold.font(size: size)
         }
     }
 }

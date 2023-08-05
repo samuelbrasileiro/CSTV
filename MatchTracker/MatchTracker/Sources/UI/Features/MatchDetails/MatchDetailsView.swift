@@ -31,7 +31,7 @@ struct MatchDetailsView: View {
                     MatchTeamsView(match: $viewModel.match)
                     if let date = viewModel.match.beginAt?.formattedDate() {
                         Text(date)
-                            .font(CoreFont.roboto.bold(size: 12))
+                            .font(CoreFont.roboto.bold(size: 12).swiftUIFont)
                             .foregroundColor(CoreColor.primary.color)
                     }
                     HStack(spacing: 12) {
