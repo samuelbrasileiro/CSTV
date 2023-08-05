@@ -39,6 +39,13 @@ struct MatchItemView: View {
     func footerView() -> some View {
         HStack(spacing: 8) {
             WebImage(url: URL(string: match.league?.imageURL ?? ""))
+                .placeholder {
+                    CoreImage.unavailableImage.image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 16, height: 16)
+                        .clipShape(Circle())
+                }
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 16, height: 16)
