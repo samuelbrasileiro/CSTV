@@ -4,21 +4,21 @@
 //
 //
 
+import Core
+import ModuleIntegrator
+import MatchTracker
 import UIKit
 
-open class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
-    public var window: UIWindow?
-
-    public func scene(_ scene: UIScene,
-                      willConnectTo session: UISceneSession,
-                      options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-
-        let window = UIWindow(windowScene: windowScene)
-
-        window.rootViewController = UINavigationController()
-        self.window = window
-        window.makeKeyAndVisible()
+public class SceneDelegate: CoreSceneDelegate {
+    public override func setupEnvironment() {
+        let navigationController = UINavigationController()
+        let resolver = ApplicationIntegrator.build()
+        let coordinator = MatchTrackerCoordinator(resolver: resolver,
+                                                  navigationController: navigationController)
+        coordinator.delegate = self
+        coordinator.start()
+        self.coordinator = coordinator
     }
 }
+
+extension SceneDelegate: MatchTrackerCoordinatorDelegate { }
