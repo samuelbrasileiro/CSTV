@@ -12,6 +12,8 @@ class MatchTrackerDomainAssembly: Assembly {
         registerMatchTrackerService(container)
         
         registerPlayersProvider(container)
+        registerRunningMatchesProvider(container)
+        registerUpcomingMatchesProvider(container)
     }
 
     private func registerMatchTrackerService(_ container: DependencyContainer) {
@@ -25,6 +27,20 @@ class MatchTrackerDomainAssembly: Assembly {
         container.register(PlayersProviderProtocol.self) { resolver in
             let service = resolver.resolve(MatchTrackerServiceProtocol.self)
             return PlayersProvider(service: service)
+        }
+    }
+    
+    private func registerUpcomingMatchesProvider(_ container: DependencyContainer) {
+        container.register(UpcomingMatchesProviderProtocol.self) { resolver in
+            let service = resolver.resolve(MatchTrackerServiceProtocol.self)
+            return UpcomingMatchesProvider(service: service)
+        }
+    }
+    
+    private func registerRunningMatchesProvider(_ container: DependencyContainer) {
+        container.register(RunningMatchesProviderProtocol.self) { resolver in
+            let service = resolver.resolve(MatchTrackerServiceProtocol.self)
+            return RunningMatchesProvider(service: service)
         }
     }
 }
