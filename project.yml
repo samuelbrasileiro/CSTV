@@ -25,6 +25,7 @@ targets:
       - target: Core
       - target: ModuleIntegrator
       - target: MatchTracker
+      - target: Service
     scheme:
       testTargets:
         - name: ServiceTests
