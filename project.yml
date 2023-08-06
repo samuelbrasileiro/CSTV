@@ -82,8 +82,6 @@ targets:
       targetName: ServiceTests
     dependencies:
       - target: Service
-      - package: DependencyInjection
-      - target: ModuleIntegrator
 
   MatchTracker:
     templates:
@@ -114,8 +112,6 @@ targets:
       targetName: MatchTrackerTests
     dependencies:
       - target: MatchTracker
-      - package: DependencyInjection
-      - target: ModuleIntegrator
 
 targetTemplates:
   groupable:
