@@ -33,7 +33,7 @@ The project is developed and documented by Samuel Brasileiro.
 
 ## App Demo
 
-[![App Demo](https://drive.google.com/uc?id=18Sy7L9WkMd6LNQmNo0F9OGksL4SOmrW0)](https://drive.google.com/file/d/1PpufB72ft6Sje4Ki5bbG3A7rgoELuQI9/preview)
+[![App Demo](https://drive.google.com/uc?id=18Sy7L9WkMd6LNQmNo0F9OGksL4SOmrW0)](https://drive.google.com/file/d/1cbYz2HwuJeOulfTEViNqtYxYaFhR7C61/preview)
 
 ## Running Locally
 
