@@ -119,7 +119,7 @@ The CSTV app project is organized into different modules, each serving a specifi
 
     The `MatchTracker` is responsible for managing the CS-GO matches visualization functionality of the application. It includes views, view controllers, coordinators, providers, and network requests necessary for handling the tracker flow. The module focuses on presenting and managing the user interface components related to matches, such as displaying upcoming and current matches, its players, and other details.
     
-    **[Read Documentation](Store/README.md)**
+    **[Read Documentation](MatchTracker/README.md)**
 
 4. **ModuleIntegration**
 
