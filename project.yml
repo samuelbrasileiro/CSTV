@@ -28,6 +28,7 @@ targets:
     scheme:
       testTargets:
         - name: ServiceTests
+        - name: MatchTrackerTests
           randomExecutionOrder: true
       gatherCoverageData: true
 
@@ -89,6 +90,11 @@ targets:
       - framework
       - groupable
       - swiftgen-generated
+    scheme:
+      gatherCoverageData: true
+      testTargets:
+        - name: MatchTrackerTests
+          randomExecutionOrder: true
     templateAttributes:
       groupName: MatchTracker
       targetName: MatchTracker
@@ -98,6 +104,18 @@ targets:
       - package: DependencyInjection
       - package: Commons
       - package: SDWebImageSwiftUI
+
+  MatchTrackerTests:
+    templates:
+      - unit-tests
+      - groupable
+    templateAttributes:
+      groupName: MatchTracker
+      targetName: MatchTrackerTests
+    dependencies:
+      - target: MatchTracker
+      - package: DependencyInjection
+      - target: ModuleIntegrator
 
 targetTemplates:
   groupable:
