@@ -12,6 +12,8 @@ import SwiftUI
 struct MatchItemView: View {
     @Binding var match: Match
     
+    @State private var isLeagueImageEmpty = false
+
     var body: some View {
         ZStack(alignment: .topTrailing) {
             VStack(spacing: 0) {
@@ -38,18 +40,25 @@ struct MatchItemView: View {
     @ViewBuilder
     func footerView() -> some View {
         HStack(spacing: 8) {
-            WebImage(url: URL(string: match.league?.imageURL ?? ""))
-                .placeholder {
-                    CoreImage.unavailableImage.image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 16, height: 16)
-                        .clipShape(Circle())
-                }
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 16, height: 16)
-            
+            if !isLeagueImageEmpty {
+                WebImage(url: URL(string: match.league?.imageURL ?? ""))
+                    .onFailure { _ in
+                        isLeagueImageEmpty = true
+                    }
+                    .placeholder {
+                        ProgressView()
+                            .scaleEffect(0.5)
+                    }
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 16, height: 16)
+            } else {
+                CoreImage.unavailableImage.image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 16, height: 16)
+                    .clipShape(Circle())
+            }
             Text(match.getTitle())
                 .font(CoreFont.roboto.regular(size: 8).swiftUIFont)
                 .foregroundColor(CoreColor.primary.color)

@@ -12,6 +12,8 @@ struct PlayerView: View {
     @Binding var player: Player
     var isLeftAligned: Bool = true
     
+    @State private var isImageEmpty = false
+
     var body: some View {
         HStack {
             if isLeftAligned {
@@ -32,6 +34,7 @@ struct PlayerView: View {
         .cornerRadius(12, corners: isLeftAligned ? [.topRight, .bottomRight] : [.topLeft, .bottomLeft])
     }
     
+    @ViewBuilder
     private var playerInfo: some View {
         VStack(alignment: isLeftAligned ? .trailing : .leading, spacing: 4) {
             Text(player.name ?? Localization.Components.Views.PlayerView.Nickname.placeholder)
@@ -46,18 +49,26 @@ struct PlayerView: View {
         }
     }
     
+    @ViewBuilder
     private var playerImage: some View {
-        WebImage(url: URL(string: player.imageURL ?? ""))
-            .placeholder {
-                CoreImage.unavailableImage.image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 48, height: 48)
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
-            }
-            .resizable()
-            .frame(width: 48, height: 48)
-            .aspectRatio(contentMode: .fit)
-            .clipped()
+        if !isImageEmpty {
+            WebImage(url: URL(string: player.imageURL ?? ""))
+                .onFailure { _ in
+                    isImageEmpty = true
+                }
+                .placeholder {
+                    ProgressView()
+                }
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 48, height: 48)
+                .clipped()
+        } else {
+            CoreImage.unavailableImage.image
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 48, height: 48)
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+        }
     }
 }
