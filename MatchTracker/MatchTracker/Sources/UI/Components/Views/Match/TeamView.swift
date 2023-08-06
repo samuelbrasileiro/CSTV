@@ -33,6 +33,7 @@ struct TeamView: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 60, height: 60)
                     .clipShape(Circle())
+                    .padding(.bottom, 10)
             }
             Spacer(minLength: 0)
             Text(team?.name ?? Localization.Components.Views.TeamView.Name.placehoder)
