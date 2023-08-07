@@ -14,6 +14,12 @@ packages:
 targets:
   Application:
     type: application
+    settings:
+      configs:
+        Debug:
+          xcconfig: App/Config/debug.xcconfig
+        Release:
+          xcconfig: App/Config/release.xcconfig
     templates:
       - groupable
       - commonConfig

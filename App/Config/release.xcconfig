@@ -1,0 +1,17 @@
+// ========== Otimization ==========
+SWIFT_OPTIMIZATION_LEVEL = -Owholemodule
+GCC_OPTIMIZATION_LEVEL = s
+
+// ========== Debug Info ==========
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+
+// ========== Bitcode ==========
+ENABLE_BITCODE = YES
+
+// ========== Stripping ==========
+STRIP_INSTALLED_PRODUCT = YES
+COPY_PHASE_STRIP = YES
+DEAD_CODE_STRIPPING = YES
+
+// ========== Validation ==========
+VALIDATE_PRODUCT = YES

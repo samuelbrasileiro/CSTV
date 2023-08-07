@@ -1,0 +1,15 @@
+// ========== Otimization ==========
+SWIFT_OPTIMIZATION_LEVEL = -Onone
+GCC_OPTIMIZATION_LEVEL = 0
+
+// ========== Debug Info ==========
+DEBUG_INFORMATION_FORMAT = dwarf
+
+// ========== Flags ==========
+OTHER_SWIFT_FLAGS = -DDEBUG
+
+// ========== Logging ==========
+OS_ACTIVITY_MODE = disable
+
+// ========== Asserts ==========
+ENABLE_NS_ASSERTIONS = YES
