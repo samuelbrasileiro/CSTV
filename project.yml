@@ -14,10 +14,9 @@ packages:
 targets:
   Application:
     type: application
-    platform: iOS
-    deploymentTarget: "15.0"
     templates:
       - groupable
+      - commonConfig
     templateAttributes:
       groupName: App
       targetName: Application
@@ -38,6 +37,7 @@ targets:
       - framework
       - groupable
       - swiftgen-generated
+      - commonConfig
     templateAttributes:
       groupName: Core
       targetName: Core
@@ -49,6 +49,7 @@ targets:
     templates:
       - framework
       - groupable
+      - commonConfig
     templateAttributes:
       groupName: Core
       targetName: ModuleIntegrator
@@ -63,6 +64,7 @@ targets:
       - framework
       - groupable
       - swiftgen-generated
+      - commonConfig
     scheme:
       gatherCoverageData: true
       testTargets:
@@ -78,6 +80,7 @@ targets:
     templates:
       - unit-tests
       - groupable
+      - commonConfig
     templateAttributes:
       groupName: Service
       targetName: ServiceTests
@@ -89,6 +92,7 @@ targets:
       - framework
       - groupable
       - swiftgen-generated
+      - commonConfig
     scheme:
       gatherCoverageData: true
       testTargets:
@@ -108,6 +112,7 @@ targets:
     templates:
       - unit-tests
       - groupable
+      - commonConfig
     templateAttributes:
       groupName: MatchTracker
       targetName: MatchTrackerTests
@@ -115,13 +120,14 @@ targets:
       - target: MatchTracker
 
 targetTemplates:
+  commonConfig:
+    deploymentTarget: "15.0"
+    platform: iOS
   groupable:
     sources:
       - path: ${groupName}/${targetName}
     group: ${groupName}
   framework:
-    deploymentTarget: "15.0"
-    platform: iOS
     type: framework
     info:
         path: ${groupName}/${targetName}/Resources/Info.plist
@@ -139,7 +145,5 @@ targetTemplates:
           - ${groupName}/${targetName}/Resources/Generated/Fonts.swift
   unit-tests:
     type: bundle.unit-test
-    platform: iOS
-    deploymentTarget: "15.0"
     info:
         path: ${groupName}/${targetName}/Info.plist
