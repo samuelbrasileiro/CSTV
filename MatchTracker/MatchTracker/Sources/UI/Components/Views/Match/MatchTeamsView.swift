@@ -20,7 +20,7 @@ struct MatchTeamsView: View {
     }
     
     var body: some View {
-        HStack {
+        HStack(spacing: 0) {
             TeamView(team: team1)
             Text(Localization.Components.Views.MatchTeamsView.Versus.text)
                 .font(CoreFont.roboto.regular(size: 12).swiftUIFont)

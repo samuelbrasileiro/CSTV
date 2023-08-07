@@ -39,10 +39,10 @@ struct TeamView: View {
             Text(team?.name ?? Localization.Components.Views.TeamView.Name.placehoder)
                 .font(CoreFont.roboto.regular(size: 10).swiftUIFont)
                 .foregroundColor(CoreColor.primary.color)
-                .lineLimit(2)
+                .lineLimit(3)
                 .multilineTextAlignment(.center)
             Spacer(minLength: 0)
         }
-        .frame(maxWidth: 100)
+        .frame(maxWidth: 60)
     }
 }
